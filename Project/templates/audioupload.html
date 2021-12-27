@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>audio upload</title>
+</head>
+<body>
+ <form action = "/audiosuccess" method = "post" enctype="multipart/form-data">
+
+        <input type="file" name="file" />
+        </br>
+
+
+        <!--<input type="file" name="file2" />-->
+
+        <input type = "submit" value="Upload">
+    </form>
+
+   {% if uploaded %}
+
+     <audio controls style="height:50px; ">
+
+      <source src='/{{name}}' type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+   <p>
+       {{result}}
+   </p>
+   {% endif %}
+</body>
+</html>
